@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://ckudr8chj1kgo"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://bi22d2bq3phkv" path="res://Goob.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://80kl10p8d3vr" path="res://player.gd" id="1_onrkg"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1755741711]
+position = Vector2(6, 4)
+script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1264029321]
+position = Vector2(492.99994, 317.99994)
+scale = Vector2(1.5833334, 1.5666667)
 texture = ExtResource("1_4flbx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=844670959]
+position = Vector2(2, -2)
+polygon = PackedVector2Array(474, 306, 474, 287, 469, 280, 474, 275, 481, 275, 484, 277, 484, 282, 488, 285, 497, 286, 502, 281, 502, 276, 507, 274, 513, 274, 518, 279, 518, 284, 512, 286, 510, 290, 510, 306, 521, 307, 523, 319, 533, 326, 537, 330, 537, 336, 537, 340, 524, 342, 520, 337, 516, 333, 513, 341, 511, 345, 519, 353, 520, 357, 520, 362, 502, 364, 500, 356, 498, 346, 488, 345, 488, 362, 483, 365, 469, 364, 465, 358, 473, 351, 475, 344, 472, 334, 460, 334, 452, 332, 452, 323, 460, 313)

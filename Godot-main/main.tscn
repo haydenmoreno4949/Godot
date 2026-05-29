@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Texture2D" uid="uid://bi22d2bq3phkv" path="res://Goob.png" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=2003069983]
+
+[node name="Goob" type="Sprite2D" parent="." unique_id=1898288140]
+position = Vector2(531, 271)
+texture = ExtResource("1_ig7tw")

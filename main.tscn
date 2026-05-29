@@ -1,9 +1,29 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
-[ext_resource type="Texture2D" uid="uid://bi22d2bq3phkv" path="res://Goob.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="2_0xm2m"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ig7tw"]
+distance = -645.0
 
 [node name="Main" type="Node2D" unique_id=2003069983]
 
-[node name="Goob" type="Sprite2D" parent="." unique_id=1898288140]
-position = Vector2(531, 271)
-texture = ExtResource("1_ig7tw")
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1241398154]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=162237159]
+shape = SubResource("WorldBoundaryShape2D_ig7tw")
+
+[node name="Platform" parent="." unique_id=1155349107 instance=ExtResource("2_0xm2m")]
+position = Vector2(686, 397)
+
+[node name="Platform" parent="Platform" unique_id=1194310642 instance=ExtResource("2_0xm2m")]
+position = Vector2(-530, -10)
+
+[node name="Platform2" parent="Platform" unique_id=1101469549 instance=ExtResource("2_0xm2m")]
+position = Vector2(95, -215)
+
+[node name="Platform" parent="Platform/Platform2" unique_id=1998494282 instance=ExtResource("2_0xm2m")]
+position = Vector2(-375, -152)
+
+[node name="Player" parent="." unique_id=1755741711 instance=ExtResource("1_ig7tw")]
+position = Vector2(75, 38)
