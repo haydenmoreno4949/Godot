@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
+[ext_resource type="Texture2D" uid="uid://7egsvmdkc8ir" path="res://city.png.png" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cugbu4w0rbbx5" path="res://platform.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bugmfl3kw87vl" path="res://goal.tscn" id="4_1bvp3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ig7tw"]
 distance = -645.0
@@ -13,8 +15,14 @@ distance = -645.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=162237159]
 shape = SubResource("WorldBoundaryShape2D_ig7tw")
 
+[node name="City_png" type="Sprite2D" parent="Ground" unique_id=2090375744]
+position = Vector2(331.49997, -78.99995)
+scale = Vector2(9.623334, 9.759999)
+texture = ExtResource("1_h2yge")
+
 [node name="Platform" parent="." unique_id=1155349107 instance=ExtResource("2_0xm2m")]
-position = Vector2(686, 397)
+position = Vector2(417, 197)
+metadata/_edit_group_ = true
 
 [node name="Platform" parent="Platform" unique_id=1194310642 instance=ExtResource("2_0xm2m")]
 position = Vector2(-530, -10)
@@ -27,3 +35,12 @@ position = Vector2(-375, -152)
 
 [node name="Player" parent="." unique_id=1755741711 instance=ExtResource("1_ig7tw")]
 position = Vector2(75, 38)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1412825981]
+position = Vector2(478, 299)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=819700760]
+
+[node name="Goal" parent="." unique_id=1520747107 instance=ExtResource("4_1bvp3")]
+position = Vector2(1029, -203)
+metadata/_edit_group_ = true
